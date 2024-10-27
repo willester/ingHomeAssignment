@@ -1,4 +1,3 @@
-import '@lion/ui/define/lion-icon.js';
 import '@lion/ui/define/lion-button.js';
 
 class LoginComponent extends HTMLElement {
@@ -17,6 +16,11 @@ class LoginComponent extends HTMLElement {
     render() {
         this.shadowRoot.innerHTML = `
             <style>
+                #submit {
+                    float: right;
+                    padding-right: 10px;
+                    margin-right: 10px;
+                }
                 .login-container {
                     position: absolute;
                     top: 50%;
@@ -28,6 +32,22 @@ class LoginComponent extends HTMLElement {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                     z-index: 10;
                 }
+                .login-component {
+                    padding: 10px;
+                }
+                .error-message {
+                    color: red;
+                    margin-top: 10px;
+                }
+                label{
+                    margin-top: 10px;
+                }
+                input {
+                    padding: 10px;
+                    overflow: visible;
+                    border: 1px solid #cdcdcd;
+                    border-radius: 4px
+                }
                 lion-button {
                     background: #007BFF;
                     border: none;
@@ -38,20 +58,18 @@ class LoginComponent extends HTMLElement {
                 lion-button:hover {
                     opacity: 0.8;
                 }
-                .error-message {
-                    color: red;
-                    margin-top: 10px;
-                }
             </style>
             <div class="login-container">
-                <h2>Login</h2>
+                <h2 style="text-align:center">Login</h2>
                 <form id="login-form">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                    <br>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <br>
+                    <div class="login-component">
+                        <input type="text" id="username" name="username" placeholder="Username" required>
+                        <br>
+                    </div>
+                    <div class="login-component">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <br>
+                    </div>
                     <lion-button id="submit">Login</lion-button>
                     <div class="error-message" id="error-message">${this.errorMessage}</div>
                 </form>
@@ -67,20 +85,19 @@ class LoginComponent extends HTMLElement {
     }
 
     handleLoginClick(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
         const username = this.shadowRoot.getElementById('username').value;
         const password = this.shadowRoot.getElementById('password').value;
 
-        // Dummy authentication check for demonstration purposes
         if (username === 'test' && password === 'test') {
             localStorage.setItem('isLogged', 'true');
             this.dispatchEvent(new CustomEvent('login-success', { bubbles: true, composed: true }));
-            this.errorMessage = ''; // Clear error message on success
+            this.errorMessage = '';
         } else {
-            this.errorMessage = 'Sorry, it seems that a user with the inserted credentials does not exist.'; // Set error message
+            this.errorMessage = 'Sorry, it seems that a user with the inserted credentials does not exist.';
         }
 
-        this.render(); // Re-render to display the updated error message or clear it
+        this.render();
     }
 }
 
