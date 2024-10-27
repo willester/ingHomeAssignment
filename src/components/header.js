@@ -21,6 +21,10 @@ class AppHeader extends HTMLElement {
                 <lion-button id="logout">Logout</lion-button>
               `
             : `
+                <div id="ctp-credit">
+                    <img src='https://png.pngtree.com/png-vector/20231001/ourmid/pngtree-attractive-bald-man-face-head-isolated-png-image_10055661.png' />
+                    CTPCredit
+                </div>
                 <lion-button id="login">Login</lion-button>
               `;
 
@@ -46,6 +50,19 @@ class AppHeader extends HTMLElement {
                     flex-grow: 1;
                     display: flex;
                     justify-content: space-around;
+                    align-items: center;
+                }
+                #ctp-credit {
+                    display: flex;
+                    align-items: center;
+                    margin-right: auto;
+                    color: white;
+                    font-size: 1.5em;
+                }
+                #ctp-credit img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin-right: 8px;
                 }
             </style>
             <header>
@@ -74,6 +91,8 @@ class AppHeader extends HTMLElement {
         switch (buttonId) {
             case 'home':
             case 'profile':
+                this.dispatchEvent(new CustomEvent('navigate', { detail: buttonId, bubbles: true, composed: true }));
+                break;
             case 'login':
                 this.dispatchEvent(new CustomEvent('login-clicked', { bubbles: true, composed: true }));
                 break;
