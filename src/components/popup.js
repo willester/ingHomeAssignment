@@ -39,6 +39,7 @@ class PopupDialog extends HTMLElement {
                     margin-top: 20px;
                     padding: 10px 20px;
                     background-color: #007BFF;
+                    border-radius: 5px;
                     color: white;
                     border: none;
                     cursor: pointer;
