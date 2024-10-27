@@ -1,3 +1,5 @@
+import '@lion/ui/define/lion-icon.js';
+
 class AppFooter extends HTMLElement {
     constructor() {
         super();

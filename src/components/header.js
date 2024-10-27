@@ -1,4 +1,4 @@
-import '@lion/button/define.js';
+import '@lion/ui/define/lion-button.js';
 
 class AppHeader extends HTMLElement {
     constructor() {
