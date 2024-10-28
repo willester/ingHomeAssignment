@@ -11,6 +11,11 @@ Key Features:
 
     Hardcoded Data: All data in the application is hardcoded for demonstration purposes and is intended for display only (for a real project the data would be retrieved from BE).
 
+    Dark and Rainbow mode: The application features an interactive theme toggle, enabling users to seamlessly switch between Dark Mode and Rainbow Mode. Dark Mode offers a sleek, darker aesthetic, while           Rainbow Mode presents a vibrant spectrum of colors that gracefully transition every second.
+
+    To change the theme, simply press the corresponding button in the header. If you wish to switch from Dark Mode to Rainbow Mode, you must first disable the current mode. This can be achieved by pressing        the Rainbow button twice—the first press disables Dark Mode, while the second activates Rainbow Mode. Alternatively, you can first press the Dark Mode button to disable it, followed by the Rainbow Mode        button to enable the new theme. The same procedure applies when transitioning from Rainbow Mode to Dark Mode.
+
+
 Project Structure
 
     Components Directory: All custom web components are located in the components folder within the project.
@@ -38,6 +43,11 @@ Caracteristici principale:
     Elemente UI: Aplicația utilizează elemente din biblioteca @lion/ui, cum ar fi inputuri și butoane, pentru a îmbunătăți interfața utilizatorului.
 
     Date hardcodate: Toate datele din aplicație sunt hardcodate pentru scopuri de demonstrație și sunt destinate exclusiv pentru afisare (pentru un proiect real, datele ar fi recuperate din backend).
+
+    Moduri Întunecat și Curcubeu: Aplicația dispune de un comutator interactiv pentru temă, permițând utilizatorilor să comute fără efort între Mod Întunecat și Mod Curcubeu. Mod Întunecat oferă o estetică        mai întunecată și elegantă, în timp ce Mod Curcubeu prezintă un spectru vibrant de culori care se transitează cu grație în fiecare secundă.
+
+    Pentru a schimba tema, pur și simplu apăsați butonul corespunzător din antet. Dacă doriți să treceți de la Mod Întunecat la Mod Curcubeu, trebuie mai întâi să dezactivați modul curent. Acest lucru se          poate realiza prin apăsarea butonului Curcubeu de două ori—prima apăsare dezactivează Mod Întunecat, iar a doua activează Mod Curcubeu. Alternativ, puteți apăsa mai întâi butonul Mod Întunecat pentru a-l      dezactiva, urmat de butonul Mod Curcubeu pentru a activa noua temă. Aceeași procedură se aplică și când treceți de la Mod Curcubeu la Mod Întunecat.
+
 
 Structura proiectului
 
