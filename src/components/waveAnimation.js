@@ -1,31 +1,30 @@
 class WaveAnimation extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
+	constructor() {
+		super();
+		this.attachShadow({ mode: 'open' });
+	}
 
-    connectedCallback() {
-        this.render();
-    }
+	connectedCallback() {
+		this.render();
+	}
 
-    render() {
-        this.shadowRoot.innerHTML = `
+	render() {
+		this.shadowRoot.innerHTML = `
             <style>
-                body {
-                    margin: 0;
-                }
-
                 svg {
                     width: 100%;
                 }
-
                 .wave-container {
-                    max-height: 25vh; /* 25% of the viewport height */
-                    overflow: hidden; /* Hide any overflow */
+                    min-height: 25vh;
+                    overflow: hidden;
+                    top: 0;
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
                 }
             </style>
             <div class="wave-container">
-                <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 1440 640" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <style type="text/css">
                             .wave {
@@ -66,7 +65,7 @@ class WaveAnimation extends HTMLElement {
                 </svg>
             </div>
         `;
-    }
+	}
 }
 
 customElements.define('wave-animation', WaveAnimation);
